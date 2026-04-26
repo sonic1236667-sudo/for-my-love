@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para mi Cisne 💙</title>
+
+<style>
+  .foto {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 70%;
+  border: 5px solid #4da6ff;
+  margin-bottom: 15px;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to top, #9fdcff, #eaf8ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 380px;
+  max-height: 80vh; /* 👈 permite crecer */
+  overflow-y: auto; /* 👈 scroll si es largo */
+  background: rgba(255, 255, 255, 0.92);
+  padding: 35px;
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+h1 {
+  color: #2f8edb;
+}
+
+p {
+  color: #345;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+button {
+  background: #4da6ff;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #2f8edb;
+}
+
+#mensaje {
+  margin-top: 20px;
+  color: #1d6fb8;
+  text-align: left; /* 👈 se ve más bonito */
+}
+
+.cloud {
+  position: absolute;
+  font-size: 65px;
+  animation: mover 25s linear infinite;
+}
+
+.bee {
+  position: absolute;
+  font-size: 30px;
+  animation: volar 10s linear infinite;
+}
+
+.flower {
+  position: absolute;
+  bottom: 0;
+  font-size: 40px;
+}
+
+@keyframes mover {
+  from { left: -100px; }
+  to { left: 110%; }
+}
+
+@keyframes volar {
+  0% { transform: translateY(100vh) translateX(0); }
+  50% { transform: translateY(45vh) translateX(70px); }
+  100% { transform: translateY(-10vh) translateX(-70px); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="cloud" style="top: 40px;">☁️</div>
+<div class="cloud" style="top: 120px; animation-duration: 35s;">☁️</div>
+<div class="card">
+
+  <!-- 👇 FOTO -->
+  <img src="WhatsApp Image 2026-04-25 at 7.47.53 PM (2).jpeg" class="foto">
+
+  <h1>Para ti, mi Cisne 💙</h1>
+
+  <p>
+    En medio de tantos días normales, llegaste tú
+    y todo comenzó a sentirse diferente.
+  </p>
+
+  <p>
+    Eres como un cielo bonito después de un día cansado:
+    tranquila, dulce y especial.
+  </p>
+
+  <p>
+    No necesito prometerte cosas enormes,
+    solo quiero cuidarte, hacerte sonreír
+    y recordarte que eres muy importante para mí.
+  </p>
+
+  <button onclick="mostrarMensaje()">Toca aquí 💙</button>
+
+  <p id="mensaje"></p>
+</div>
+
+<script>
+let musica;
+function mostrarMensaje() {
+  document.getElementById("mensaje").innerHTML = `
+  Gracias por existir, mi Cisne 💙<br><br>
+
+  Usted me preguntó qué decía la carta…<br><br>
+
+  Mi amor, somos dos personas muy diferentes,
+  pero muy compatibles.<br><br>
+
+  Chocamos mucho, pero cuando pasa,
+  en minutos arreglamos y después estamos
+  molestándonos mutuamente… y eso,
+  aunque suene raro, es algo hermoso.<br><br>
+
+  Somos humanos, nos equivocamos,
+  y a veces no medimos lo que podemos provocar
+  en el otro… pero aún así, aquí seguimos.<br><br>
+
+  Yo solo quiero decirle que la amo mucho 💙<br>
+  y que quiero compartir mi vida a su lado.<br><br>
+
+  La vida es relativa, amor… Me muero por estar con usted
+  y yo quiero vivir cada momento con usted.<br><br>
+
+  Amo todo de usted:
+  su forma de mirarme, y perdon pero de la forma mas egoista quiero que solo me mire a mi
+  su forma de ser, la forma en la que me pega 
+  incluso esas pequeñas cosas que solo usted tiene.<br><br>
+
+  Y pase lo que pase, de la forma mas hormonal por asi decirlo, la quiero, la amo, la deseo, la extraño, la adoro y quiero tenerla siempre 
+  quiero que sepa algo muy claro:<br><br>
+
+  aquí sigo…<br>
+  amándola muchísimo y como sabe la amo 3 millones mi dulzura💙
+  `;
+   // 🎶 MÚSICA AQUÍ
+  if (!musica) {
+    musica = new Audio("@AlvaroDiaz - Yoko (Letra  Lyrics).mp3");
+    musica.loop = true;
+    musica.volume = 0.3;
+    musica.play();
+  }
+  
+}
+function crearAbeja() {
+  const bee = document.createElement("div");
+  bee.className = "bee";
+  bee.innerHTML = "🐝";
+  bee.style.left = Math.random() * 100 + "vw";
+  bee.style.animationDuration = (Math.random() * 5 + 7) + "s";
+  document.body.appendChild(bee);
+
+  setTimeout(() => bee.remove(), 12000);
+}
+
+setInterval(crearAbeja, 1200);
+
+for (let i = 0; i < 13; i++) {
+  const flor = document.createElement("div");
+  flor.className = "flower";
+  flor.innerHTML = "🌼";
+  flor.style.left = (i * 8) + "vw";
+  document.body.appendChild(flor);
+}
+</script>
+</script>
+}
+
+</script>
+
+</body>
+</html>
